@@ -1,0 +1,25 @@
+From dfe3eeae48d1224cec3e00b503a370e3ad7e2ced Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jan=20Jan=C3=9Fen?= <janssen@mpie.de>
+Date: Sat, 7 Sep 2024 17:59:56 +0200
+Subject: [PATCH] imp
+
+---
+ offlineimap/localeval.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/offlineimap/localeval.py b/offlineimap/localeval.py
+index 76ae6fa..a77a2b6 100644
+--- a/offlineimap/localeval.py
++++ b/offlineimap/localeval.py
+@@ -16,7 +16,10 @@
+ #    along with this program; if not, write to the Free Software
+ #    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ 
+-import imp
++try:
++    import imp
++except ImportError:
++    import importlib as imp
+ try:
+     import errno
+ except:
