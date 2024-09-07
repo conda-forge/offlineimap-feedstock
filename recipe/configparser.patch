@@ -1,0 +1,22 @@
+From 3564c49ce121329baa240908ef09212aceb0b460 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jan=20Jan=C3=9Fen?= <janssen@mpie.de>
+Date: Sat, 7 Sep 2024 17:52:09 +0200
+Subject: [PATCH] configparser
+
+---
+ offlineimap/CustomConfig.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/offlineimap/CustomConfig.py b/offlineimap/CustomConfig.py
+index 7dce4a6..507b5a7 100644
+--- a/offlineimap/CustomConfig.py
++++ b/offlineimap/CustomConfig.py
+@@ -22,7 +22,7 @@
+ try:
+     from ConfigParser import SafeConfigParser, Error
+ except ImportError: # Python3.
+-    from configparser import SafeConfigParser, Error
++    from configparser import ConfigParser as SafeConfigParser, Error
+ from offlineimap.localeval import LocalEval
+ 
+ class CustomConfigParser(SafeConfigParser):
