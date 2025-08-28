@@ -7,14 +7,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/offlineimap-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/offlineimap-{{ version }}.tar.gz
   sha256: 5dbd7167b8729d87caa50bed63562868b6634b888348d9bc088a721530c82fef
   patches:
     - configparser.patch
     - imp.patch
 
 build:
-  number: 5
+  number: 6
   script: {{ PYTHON }} -m pip install . -vv
   skip: True  # [win]
 
