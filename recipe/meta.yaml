@@ -24,6 +24,8 @@ requirements:
     - python
     - rfc6555
     - imaplib2
+    - urllib3
+    - distro
 
 test:
   imports:
