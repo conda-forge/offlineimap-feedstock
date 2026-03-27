@@ -23,7 +23,7 @@ requirements:
   run:
     - python
     - rfc6555
-    - six
+    - imaplib2
 
 test:
   imports:
