@@ -11,17 +11,17 @@ source:
   sha256: 82ce54136465ea1cce62f4e961e8c155ac3eee2149fa812763629448902d7d69
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
-  skip: True  # [win]
+  noarch: python
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
     - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - rfc6555
     - imaplib2
     - urllib3 >=1.25.9,<1.26
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: http://www.offlineimap.org
