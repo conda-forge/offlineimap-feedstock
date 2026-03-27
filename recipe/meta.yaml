@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/OfflineIMAP/offlineimap3/archive/v{{ version }}.tar.gz
-  sha256: 5dbd7167b8729d87caa50bed63562868b6634b888348d9bc088a721530c82fef
+  sha256: 82ce54136465ea1cce62f4e961e8c155ac3eee2149fa812763629448902d7d69
 
 build:
   number: 0
