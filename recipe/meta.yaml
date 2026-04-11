@@ -1,5 +1,5 @@
 {% set name = "offlineimap" %}
-{% set version = "8.0.1" %}
+{% set version = "8.0.2" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/OfflineIMAP/offlineimap3/archive/v{{ version }}.tar.gz
-  sha256: 82ce54136465ea1cce62f4e961e8c155ac3eee2149fa812763629448902d7d69
+  sha256: c299cbbab92d48215ea37ec06ec68699d17e59ab97a1b98e792f75e0a507b306
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
