@@ -1,0 +1,55 @@
+schema_version: 1
+
+context:
+  name: offlineimap
+  version: 8.0.3
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/OfflineIMAP/offlineimap3/archive/v${{ version }}.tar.gz
+  sha256: 967a8ca24e5f665cd22941ba1173db10cbd908085ec22ab9b0e4a64c94007d85
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - rfc6555
+    - imaplib2
+    - urllib3 >=1.25.9,<1.26
+    - distro
+
+tests:
+  - python:
+      imports:
+        - offlineimap
+        - offlineimap.folder
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: GPL-2.0-only
+  license_file: COPYING
+  summary: Read/sync your IMAP mailboxes
+  description: |
+    OfflineIMAP is software that downloads your email mailbox(es) as
+    local Maildirs. OfflineIMAP will synchronize both sides via IMAP.
+  homepage: http://www.offlineimap.org
+  repository: https://github.com/OfflineIMAP/offlineimap
+  documentation: http://www.offlineimap.org/documentation.html
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
